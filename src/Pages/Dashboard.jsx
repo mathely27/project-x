@@ -1,3 +1,4 @@
+import WelcomeCard from "../Components/WelcomeCard";
 import {
   LayoutDashboard,
   Keyboard,
@@ -63,9 +64,10 @@ function Dashboard(){
                         <span>PROGRAMER_99</span>
                         </button>
                     </div>
+                    
 
                 </div>
-                    <h1>WELCOME BACK</h1>
+                    <WelcomeCard />
             </main>
         </div>
         </>
