@@ -97,4 +97,13 @@ transition: background-color 0.25s ease, color 0.25s ease;
 
 .sidebar-bottom {
   margin-top: auto;
+  font-size: 20px;
+}
+
+.sidebar-bottom p{
+  margin-top: 18px;
+  font-size: 20px;
+}
+.sidebar-bottom p + p {
+  margin-top: 14px;
 }
