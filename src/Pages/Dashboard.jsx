@@ -3,9 +3,16 @@ import {
   Keyboard,
   Mouse,
   Timer,
-  Trophy
+  Trophy,
+  Search,
+  Moon,
+  Settings,
+  UserCircle
 } from 'lucide-react'
 import {useState} from 'react'; 
+
+
+
 function Dashboard(){
     const [activeMenu, setActiveMenu] = useState('dashboard')
     return (
@@ -22,13 +29,13 @@ function Dashboard(){
                         onClick={() => setActiveMenu('dashboard')}>
                             <LayoutDashboard />DASHBOARD</p>
                     <p   className={activeMenu === 'typing' ? 'active' : ''}
-  onClick={() => setActiveMenu('typing')}><Keyboard />TYPING TEST</p>
+                            onClick={() => setActiveMenu('typing')}><Keyboard />TYPING TEST</p>
                     <p   className={activeMenu === 'cps' ? 'active' : ''}
-  onClick={() => setActiveMenu('cps')}> <Mouse/>CPS KING</p>
+                            onClick={() => setActiveMenu('cps')}> <Mouse/>CPS KING</p>
                     <p   className={activeMenu === 'reaction' ? 'active' : ''}
-  onClick={() => setActiveMenu('reaction')}><Timer/>REACTION TIME</p>
+                            onClick={() => setActiveMenu('reaction')}><Timer/>REACTION TIME</p>
                     <p   className={activeMenu === 'leaderboard' ? 'active' : ''}
-  onClick={() => setActiveMenu('leaderboard')}><Trophy/>LEADERBOARDS</p>
+                            onClick={() => setActiveMenu('leaderboard')}><Trophy/>LEADERBOARDS</p>
 
 
                 </nav>
@@ -42,8 +49,24 @@ function Dashboard(){
             </aside>
             
             <main className="main-content">
-                <h1>WELCOME BACK</h1>
-                </main>
+                <div className="top-bar">
+                    <div className="search-box">
+                        <Search/>
+                        <input type="text" placeholder="FIND COMPETITIORS....." />
+
+                    </div>
+                    <div className="topbar-actions">
+                        <button><Moon /></button>
+                        <button><Settings /></button>
+                        <button className="profile">
+                        <UserCircle />
+                        <span>PROGRAMER_99</span>
+                        </button>
+                    </div>
+
+                </div>
+                    <h1>WELCOME BACK</h1>
+            </main>
         </div>
         </>
     )

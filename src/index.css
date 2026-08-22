@@ -107,3 +107,43 @@ transition: background-color 0.25s ease, color 0.25s ease;
 .sidebar-bottom p + p {
   margin-top: 14px;
 }
+
+.main-content {
+  flex: 1;
+  padding: 40px 28px;
+}
+
+.top-bar{
+  display:flex;
+  /* flex-direction: row; */
+  align-items:center;
+  justify-content:space-between;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  height:70px;
+  border: 2px solid #222222;
+}
+
+.search-box{
+  display: flex;
+  align-items:center;
+  gap:10px;
+
+
+}
+.search-box input {
+  width: 230px;
+  height: 38px;
+  background-color: #111111;
+  border: 2px solid #292929;
+  color: #ffffff;
+  padding: 0 10px;
+  font-size: 12px;
+  outline: none;
+}
