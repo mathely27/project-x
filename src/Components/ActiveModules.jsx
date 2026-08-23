@@ -13,13 +13,19 @@ function ActiveModules(){
         <p>Test your typing speed and accuracy.</p>
         <button>LAUNCH</button>
     </div>
-
     <div className="module-card">
         <Mouse />
         <h3>CPS KING</h3>
         <p>Test how fast you can click.</p>
         <button>LAUNCH</button>
     </div>
+    <div className="module-card">
+        <Keyboard />
+        <h3>MEMORY TEST</h3>
+        <p>Challenge your memory and focus.</p>
+        <button>LAUNCH</button>
+    </div>
+
 
     <div className="module-card">
         <Timer />
@@ -49,12 +55,12 @@ function ActiveModules(){
         <button>LAUNCH</button>
     </div>
 
-    <div className="module-card">
+    {/* <div className="module-card">
         <Keyboard />
         <h3>MEMORY TEST</h3>
         <p>Challenge your memory and focus.</p>
         <button>LAUNCH</button>
-    </div>
+    </div> */}
 
     <div className="module-card">
         <Mouse />

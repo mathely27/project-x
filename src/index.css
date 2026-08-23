@@ -206,6 +206,13 @@ cursor: pointer;
   flex-direction:row;
   padding:20px;
   flex:1;
+      transition: transform 0.2s ease;
+    transform-origin: top left;
+}
+
+
+.welcome-card:hover {
+    transform: rotate(1deg) translateY(2px);
 }
 
 .welcome-img {
@@ -255,7 +262,7 @@ margin-top: 20px;
   display:flex;
   align-items:center;
    width: fit-content;
-   /* animation: triggerBox 0.8s ease-in-out infinite; */
+   animation: triggerBox 0.8s ease-in-out infinite;
 
 }
 @keyframes triggerBox {
@@ -309,7 +316,12 @@ margin-top: 20px;
     box-sizing: border-box;
     justify-content: center;
     height:500px;
+          transition: transform 0.2s ease;
+    transform-origin: top left;
 
+}
+.stats-card:hover {
+    transform: rotate(1deg) translateY(2px);
 }
 .cards-row {
     display: flex;
@@ -417,6 +429,21 @@ margin-top: 20px;
     gap:15px;
 
 }
+/* .module-card {
+    transition: transform 0.2s ease;
+}
+
+.module-card:hover {
+    transform: translateY(-8px);
+} */
+ .module-card {
+    transition: transform 0.2s ease;
+    transform-origin: bottom left;
+}
+
+.module-card:hover {
+    transform: rotate(-2deg) translateY(-3px);
+}
 
 .module-card svg {
     width: 40px;
@@ -462,4 +489,12 @@ margin-top: 20px;
     background-color: #000000;
     color: #adacac;
     box-shadow: 5px 5px 0 rgb(147, 145, 145); 
+}
+
+.module-card button:hover{
+    background-color:  #adacac;
+    color: #000000;
+    box-shadow: 5px 5px 0 black; 
+    border:5px solid #000000;
+
 }
