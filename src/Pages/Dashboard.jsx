@@ -1,4 +1,5 @@
 import WelcomeCard from "../Components/WelcomeCard";
+import StatsCard from "../Components/StatsCard";
 import {
   LayoutDashboard,
   Keyboard,
@@ -8,7 +9,8 @@ import {
   Search,
   Moon,
   Settings,
-  UserCircle
+  UserCircle,
+  
 } from 'lucide-react'
 import {useState} from 'react'; 
 
@@ -64,10 +66,47 @@ function Dashboard(){
                         <span>PROGRAMER_99</span>
                         </button>
                     </div>
-                    
+
 
                 </div>
+                <div className="dashboard-cards">
                     <WelcomeCard />
+                    <StatsCard/>
+                </div>
+
+                {/* <div className="stats-card">
+                    <div calssName="stats-title">
+                        <BarChart3/>
+                        <h3>
+                            YOUR_STATS
+                        </h3>
+                        <div className="stats-list">
+                            <div className="stats-item">
+                                <div className="stats-info">
+                                    <span>PEAK SPEED</span>
+                                    <strong>148 WPM</strong>
+                                </div>
+                                
+                            </div>
+
+                            <div className="stats-item">
+                                <div className="stats-info">
+                                    <span>CLICK POWER</span>
+                                    <strong>14.2 CPS</strong>
+                                </div>
+                                
+                            </div>
+
+                            <div className="stats-item">
+                                <div className="stats-info">
+                                    <span>GLOBAL RANK</span>
+                                    <strong>442nd</strong>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>     */}
             </main>
         </div>
         </>

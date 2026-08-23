@@ -12,25 +12,11 @@ function WelcomeCard() {
             <div className="welcome-info">
                 <h1>WELCOME BACK,</h1>
                 <h3>PROGRAMER_99</h3>
+                <div className="global-rank">GLOBAL RANK #442</div>
                 <p>Ready to beat your best?</p>
                 
             
-            <div className="welcome-stats">
-                <div className="stat">
-                    <h4>BEST SCORE</h4>
-                    <p>95</p>
-                </div>
-
-                <div className="stat">
-                    <h4>RANK</h4>
-                    <p>#12</p>
-                </div>
-
-                <div className="stat">
-                    <h4>GAMES PLAYED</h4>
-                    <p>48</p>
-                </div>
-            </div>
+        
             </div>
 
         </div>
