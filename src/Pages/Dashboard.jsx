@@ -1,5 +1,6 @@
 import WelcomeCard from "../Components/WelcomeCard";
 import StatsCard from "../Components/StatsCard";
+import ActiveModules from "../Components/ActiveModules";
 import {
   LayoutDashboard,
   Keyboard,
@@ -73,7 +74,7 @@ function Dashboard(){
                     <WelcomeCard />
                     <StatsCard/>
                 </div>
-
+                <ActiveModules/>
                 {/* <div className="stats-card">
                     <div calssName="stats-title">
                         <BarChart3/>

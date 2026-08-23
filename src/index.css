@@ -16,7 +16,22 @@ body{
   min-height:100vh;
   background: #131313;
 }
+/* .dashboard-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 25px;
+}
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+} */
 .sidebar{
   width:300px;
   height:100vh;
@@ -25,6 +40,9 @@ body{
   padding: 30px 20px;
   display: flex;
 flex-direction: column;
+position:fixed;
+    left: 0;
+    top: 0;
 
 }
 .sidebar h1 {
@@ -74,6 +92,9 @@ transition: background-color 0.25s ease, color 0.25s ease;
 .main-content {
   flex: 1;
   padding: 40px 28px;
+
+  margin-left: 300px;      /*yeh jo margin diya hai it is the width of the sidebar,kyuki sidebar ko maine normla flow se out kar diya(becoz i have used there postion:fixed toh side normal properties se bahar aa gya and maine ab main-content ko bol diya ki margin de 300pxs ka.    */
+    
 }
 
 .main-content h1 {
@@ -355,4 +376,90 @@ margin-top: 20px;
   font-family: Arial, sans-serif;
   font-style: italic;
 
+}
+
+.active-modules {
+    margin-top: 30px;
+    padding: 15px;
+    /* border: 5px solid black;
+    box-shadow: 7px 7px 0 black; */
+    color: #ffb5a0;
+}
+
+.active-modules h2 {
+    margin: 0 0 25px 0;
+    font-size: 34px;
+    font-weight: 900;
+      letter-spacing:1px;
+  font-family: Arial, sans-serif;
+  font-style: italic;
+}
+
+.module-list{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+    /* border: 5px solid black;
+    box-shadow: 7px 7px 0 black;  */
+    gap:20px;
+    
+    
+}
+
+.module-card {
+    border: 5px solid black;
+    box-shadow: 7px 7px 0 black;
+    padding:20px;
+    margin:10px;
+        min-height: 320px;
+
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+
+}
+
+.module-card svg {
+    width: 40px;
+    height: 40px;
+    padding:5px;
+    background-color:#ff8c00;
+    color: #000000;
+    margin-bottom:20px;
+}
+
+.module-card h3{
+  font-family: Arial, Helvetica, sans-serif;
+      font-size: 34px;
+    font-weight: 700;
+      letter-spacing:1px;
+      margin: 0 0 12px 0;
+
+}
+
+.module-card p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.4;
+    font-family: Arial, sans-serif;
+    color:#d4d4d4;
+}
+
+
+.module-card button {
+    margin-top: auto;
+    width: 100%;
+    height: 50px;
+
+    background-color:#ffb5a0;
+    /* color: #111111; */
+    /* border: 4px solid black;
+    box-shadow: 5px 5px 0 black; */
+
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+
+    background-color: #000000;
+    color: #adacac;
+    box-shadow: 5px 5px 0 rgb(147, 145, 145); 
 }
