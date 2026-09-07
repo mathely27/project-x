@@ -24,7 +24,7 @@ function Dashboard(){
         <div className="dashboard">
             <aside className="sidebar">
                 <div className="logo">
-                    <h1>Reflex</h1>
+                    <h1>Clutch</h1>
                 </div>
                 
 
