@@ -436,13 +436,26 @@ margin-top: 20px;
 .module-card:hover {
     transform: translateY(-8px);
 } */
- .module-card {
-    transition: transform 0.2s ease;
-    transform-origin: bottom left;
+
+.module-card button {
+    background: #111111;
+    color: #ffb29e;
+    border: 2px solid #aaaaaa;
+
+    width: 100%;
+    padding: 14px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 5px 5px 0 #888888;
 }
 
-.module-card:hover {
-    transform: rotate(-2deg) translateY(-3px);
+.module-card button:hover {
+    background: #ffb29e;
+    color: #111111;
 }
 
 .module-card svg {
