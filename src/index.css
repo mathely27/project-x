@@ -6,6 +6,9 @@
 
 body{
   background-color: #111111;
+
+
+  /* background-color: #F3F1EE; */
   color:white;
   font-family:"Arial Narrow", Arial, sans-serif;
 
@@ -15,6 +18,15 @@ body{
   display:flex;
   min-height:100vh;
   background: #131313;
+  
+
+  /* background:#F2F0EC; */
+
+     /* background: linear-gradient(
+        135deg,
+        #E6E8EA,
+        #EAE5EB
+    ); */
 }
 /* .dashboard-content {
     display: grid;
@@ -33,10 +45,19 @@ body{
     gap: 30px;
 } */
 .sidebar{
-  width:300px;
+  width: 350px;
   height:100vh;
-  background: #131313;
-    border-right: 7px solid #303030;
+
+
+  /* background: #131313; */
+    background: #1D2430;
+    border-right: 7px solid #111111;
+
+    /* border-right: 7px solid #303030; */
+
+
+
+    
   padding: 30px 20px;
   display: flex;
 flex-direction: column;
@@ -47,21 +68,21 @@ position:fixed;
 }
 .sidebar h1 {
   color: #ffb5a0;
-  font-size: 42px;
+  font-size: 58px;
   font-weight: 900;
   font-style: italic;
   letter-spacing: -1.5px;
-  margin-bottom: 42px;
+  margin-bottom: 44px;
 }
 
 .sidebar nav p {
   display:flex;
   align-items:center;
   color: #d4d4d4;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 800;
   letter-spacing: 0.3px;
-  margin-bottom: 27px;
+  margin-bottom: 44px;
   padding: 12px 10px;
 border: 2px solid transparent;
 gap:14px;
@@ -70,8 +91,8 @@ transition: background-color 0.25s ease, color 0.25s ease;
 
 }
 .sidebar nav p svg {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
 }
 .sidebar nav p:hover {
@@ -93,7 +114,8 @@ transition: background-color 0.25s ease, color 0.25s ease;
   flex: 1;
   padding: 40px 28px;
 
-  margin-left: 300px;      /*yeh jo margin diya hai it is the width of the sidebar,kyuki sidebar ko maine normla flow se out kar diya(becoz i have used there postion:fixed toh side normal properties se bahar aa gya and maine ab main-content ko bol diya ki margin de 300pxs ka.    */
+  margin-left: 300px;  
+   margin-left: 370px;    /*yeh jo margin diya hai it is the width of the sidebar,kyuki sidebar ko maine normla flow se out kar diya(becoz i have used there postion:fixed toh side normal properties se bahar aa gya and maine ab main-content ko bol diya ki margin de 300pxs ka.    */
     
 }
 
@@ -190,13 +212,19 @@ cursor: pointer;
 }
 
 
-.topbar-actions button:hover {
+.topbar-actions button:hover {background-color: #008CFF;
   background-color: #ffb5a0;
   color: #111111;
 }
 
 .welcome-card{
-  background-color: #f8441c;;
+  /* background-color: #f8441c;; */
+    background: linear-gradient(
+        120deg,
+        #dffcff 0%,
+        #eef5ff 45%,
+        #fff0f8 100%
+    );
   width:850px;
   height:500px;
         border:5px solid black;
@@ -251,18 +279,22 @@ margin-top: 20px;
     opacity: 0.7;
 }
 .welcome-info p {
-    font-size: 38px;
-    color: #111111;
+    font-size: 48px;
+    color: #000000;
     margin-bottom: 60px;
         border:5px solid black;
   box-shadow:7px 7px 0 black;
-  background-color: #111111;
-  color: #f8441c;
+  /* background-color: #111111; */
+  /* color: #f8441c; */
   padding:10px;
   display:flex;
   align-items:center;
    width: fit-content;
-   animation: triggerBox 0.8s ease-in-out infinite;
+
+       background-color: #CFFAFE;
+    
+
+   /* animation: triggerBox 0.8s ease-in-out infinite; */
 
 }
 @keyframes triggerBox {
@@ -436,26 +468,50 @@ margin-top: 20px;
 .module-card:hover {
     transform: translateY(-8px);
 } */
-
-.module-card button {
-    background: #111111;
-    color: #ffb29e;
-    border: 2px solid #aaaaaa;
-
-    width: 100%;
-    padding: 14px;
-
-    font-size: 18px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    box-shadow: 5px 5px 0 #888888;
+ .module-card {
+    transition: transform 0.2s ease;
+    transform-origin: bottom left;
+    /* background-color: #ff1493; */
 }
 
-.module-card button:hover {
-    background: #ffb29e;
-    color: #111111;
+
+ /* ===================================== */
+
+
+.module-card:nth-child(1) {
+    background-color: #FFEAF2;
+}
+
+.module-card:nth-child(2) {
+    background-color: #E5FAFF;
+}
+
+.module-card:nth-child(3) {
+    background-color: #FFF9D9;
+}
+
+.module-card:nth-child(4) {
+    background-color: #F0E8FF;
+}
+
+.module-card:nth-child(5) {
+    background-color: #E9FFE9;
+}
+
+.module-card:nth-child(6) {
+    background-color: #FFF0DD;
+}
+
+.module-card:nth-child(7) {
+    background-color: #EAF3FF;
+}
+
+.module-card:nth-child(8) {
+    background-color: #FFE9FA;
+}
+
+.module-card:hover {
+    transform: rotate(-2deg) translateY(-3px);
 }
 
 .module-card svg {
@@ -473,6 +529,7 @@ margin-top: 20px;
     font-weight: 700;
       letter-spacing:1px;
       margin: 0 0 12px 0;
+      color:#000000;
 
 }
 
@@ -481,7 +538,9 @@ margin-top: 20px;
     font-size: 18px;
     line-height: 1.4;
     font-family: Arial, sans-serif;
-    color:#d4d4d4;
+    /* color:#d4d4d4;
+     */
+     color:#000000;
 }
 
 

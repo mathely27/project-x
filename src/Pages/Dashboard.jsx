@@ -1,319 +1,116 @@
-// import WelcomeCard from "../Components/WelcomeCard";
-// import StatsCard from "../Components/StatsCard";
-// import ActiveModules from "../Components/ActiveModules";
-// import {
-//   LayoutDashboard,
-//   Keyboard,
-//   Mouse,
-//   Timer,
-//   Trophy,
-//   Search,
-//   Moon,
-//   Settings,
-//   UserCircle,
-  
-// } from 'lucide-react'
-// import {useState} from 'react'; 
-
-
-
-// function Dashboard({onLaunchTyping}){}
-//     const [activeMenu, setActiveMenu] = useState('dashboard')
-//     return (
-//         <>
-//         <div className="dashboard">
-//             <aside className="sidebar">
-//                 <div className="logo">
-//                     <h1>Reflex</h1>
-//                 </div>
-                
-
-//                 <nav>
-//                     <p  className={activeMenu === 'dashboard' ? 'active' : ''}
-//                         onClick={() => setActiveMenu('dashboard')}>
-//                             <LayoutDashboard />DASHBOARD</p>
-//                     <p   className={activeMenu === 'typing' ? 'active' : ''}
-//                             onClick={() => setActiveMenu('typing')}><Keyboard />TYPING TEST</p>
-//                     <p   className={activeMenu === 'cps' ? 'active' : ''}
-//                             onClick={() => setActiveMenu('cps')}> <Mouse/>CPS KING</p>
-//                     <p   className={activeMenu === 'reaction' ? 'active' : ''}
-//                             onClick={() => setActiveMenu('reaction')}><Timer/>REACTION TIME</p>
-//                     <p   className={activeMenu === 'leaderboard' ? 'active' : ''}
-//                             onClick={() => setActiveMenu('leaderboard')}><Trophy/>LEADERBOARDS</p>
-
-
-//                 </nav>
-//                 <div className="sidebar-bottom">
-//   <button>GO_PRO</button>
-
-//   <p>? HELP</p>
-//   <p>↪ LOGOUT</p>
-// </div>
-
-//             </aside>
-            
-//             <main className="main-content">
-//                 <div className="top-bar">
-//                     <div className="search-box">
-//                         <Search/>
-//                         <input type="text" placeholder="FIND COMPETITIORS....." />
-
-//                     </div>
-//                     <div className="topbar-actions">
-//                         <button><Moon /></button>
-//                         <button><Settings /></button>
-//                         <button className="profile">
-//                         <UserCircle />
-//                         <span>PROGRAMER_99</span>
-//                         </button>
-//                     </div>
-
-
-//                 </div>
-//                 <div className="dashboard-cards">
-//                     <WelcomeCard />
-//                     <StatsCard/>
-//                 </div>
-//                 <ActiveModules onLaunchTyping={onLaunchTyping}/>
-//                 {/* <div className="stats-card">
-//                     <div calssName="stats-title">
-//                         <BarChart3/>
-//                         <h3>
-//                             YOUR_STATS
-//                         </h3>
-//                         <div className="stats-list">
-//                             <div className="stats-item">
-//                                 <div className="stats-info">
-//                                     <span>PEAK SPEED</span>
-//                                     <strong>148 WPM</strong>
-//                                 </div>
-                                
-//                             </div>
-
-//                             <div className="stats-item">
-//                                 <div className="stats-info">
-//                                     <span>CLICK POWER</span>
-//                                     <strong>14.2 CPS</strong>
-//                                 </div>
-                                
-//                             </div>
-
-//                             <div className="stats-item">
-//                                 <div className="stats-info">
-//                                     <span>GLOBAL RANK</span>
-//                                     <strong>442nd</strong>
-//                                 </div>
-                                
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>     */}
-//             </main>
-//         </div>
-//         </>
-//     )
-// }
-// export default Dashboard
-
-
-
-
-
-
-
-
-
 import WelcomeCard from "../Components/WelcomeCard";
 import StatsCard from "../Components/StatsCard";
 import ActiveModules from "../Components/ActiveModules";
-import { useNavigate } from "react-router-dom";
 import {
-    LayoutDashboard,
-    Keyboard,
-    Mouse,
-    Timer,
-    Trophy,
-    Search,
-    Moon,
-    Settings,
-    UserCircle,
-} from "lucide-react";
+  LayoutDashboard,
+  Keyboard,
+  Mouse,
+  Timer,
+  Trophy,
+  Search,
+  Moon,
+  Settings,
+  UserCircle,
+  
+} from 'lucide-react'
+import {useState} from 'react'; 
 
-import { useState } from "react";
 
 
-function Dashboard() {
-    const navigate = useNavigate();
-
-    const [activeMenu, setActiveMenu] = useState("dashboard");
-
+function Dashboard(){
+    const [activeMenu, setActiveMenu] = useState('dashboard')
     return (
         <>
-            <div className="dashboard">
+        <div className="dashboard">
+            <aside className="sidebar">
+                <div className="logo">
+                    <h1>Clutch</h1>
+                </div>
+                
 
-                <aside className="sidebar">
+                <nav>
+                    <p  className={activeMenu === 'dashboard' ? 'active' : ''}
+                        onClick={() => setActiveMenu('dashboard')}>
+                            <LayoutDashboard />DASHBOARD</p>
+                    <p   className={activeMenu === 'typing' ? 'active' : ''}
+                            onClick={() => setActiveMenu('typing')}><Keyboard />TYPING TEST</p>
+                    <p   className={activeMenu === 'cps' ? 'active' : ''}
+                            onClick={() => setActiveMenu('cps')}> <Mouse/>CPS KING</p>
+                    <p   className={activeMenu === 'reaction' ? 'active' : ''}
+                            onClick={() => setActiveMenu('reaction')}><Timer/>REACTION TIME</p>
+                    <p   className={activeMenu === 'leaderboard' ? 'active' : ''}
+                            onClick={() => setActiveMenu('leaderboard')}><Trophy/>LEADERBOARDS</p>
 
-                    <div className="logo">
-                        <h1>Reflex</h1>
+
+                </nav>
+                <div className="sidebar-bottom">
+  <button>GO_PRO</button>
+
+  <p>? HELP</p>
+  <p>↪ LOGOUT</p>
+</div>
+
+            </aside>
+            
+            <main className="main-content">
+                <div className="top-bar">
+                    <div className="search-box">
+                        <Search/>
+                        <input type="text" placeholder="FIND COMPETITIORS....." />
+
                     </div>
-
-
-                    <nav>
-
-                        <p
-                            className={
-                                activeMenu === "dashboard"
-                                    ? "active"
-                                    : ""
-                            }
-                            onClick={() =>
-                                setActiveMenu("dashboard")
-                            }
-                        >
-                            <LayoutDashboard />
-                            DASHBOARD
-                        </p>
-
-
-                        <p
-                            className={
-                                activeMenu === "typing"
-                                    ? "active"
-                                    : ""
-                            }
-                            onClick={() => {
-    setActiveMenu("typing");
-    navigate("/memory-typing");
-}}
-                        >
-                            <Keyboard />
-                            Memory Typing
-                        </p>
-
-
-                        <p
-                            className={
-                                activeMenu === "cps"
-                                    ? "active"
-                                    : ""
-                            }
-                            onClick={() =>
-                                setActiveMenu("cps")
-                            }
-                        >
-                            <Mouse />
-                            CPS KING
-                        </p>
-
-
-                        <p
-                            className={
-                                activeMenu === "reaction"
-                                    ? "active"
-                                    : ""
-                            }
-                            onClick={() =>
-                                setActiveMenu("reaction")
-                            }
-                        >
-                            <Timer />
-                            REACTION TIME
-                        </p>
-
-
-                        <p
-                            className={
-                                activeMenu === "leaderboard"
-                                    ? "active"
-                                    : ""
-                            }
-                            onClick={() =>
-                                setActiveMenu("leaderboard")
-                            }
-                        >
-                            <Trophy />
-                            LEADERBOARDS
-                        </p>
-
-                    </nav>
-
-
-                    <div className="sidebar-bottom">
-
-                        <button>
-                            GO_PRO
+                    <div className="topbar-actions">
+                        <button><Moon /></button>
+                        <button><Settings /></button>
+                        <button className="profile">
+                        <UserCircle />
+                        <span>PROGRAMER_99</span>
                         </button>
-
-                        <p>? HELP</p>
-
-                        <p>↪ LOGOUT</p>
-
                     </div>
 
-                </aside>
 
+                </div>
+                <div className="dashboard-cards">
+                    <WelcomeCard />
+                    <StatsCard/>
+                </div>
+                <ActiveModules/>
+                {/* <div className="stats-card">
+                    <div calssName="stats-title">
+                        <BarChart3/>
+                        <h3>
+                            YOUR_STATS
+                        </h3>
+                        <div className="stats-list">
+                            <div className="stats-item">
+                                <div className="stats-info">
+                                    <span>PEAK SPEED</span>
+                                    <strong>148 WPM</strong>
+                                </div>
+                                
+                            </div>
 
-                <main className="main-content">
+                            <div className="stats-item">
+                                <div className="stats-info">
+                                    <span>CLICK POWER</span>
+                                    <strong>14.2 CPS</strong>
+                                </div>
+                                
+                            </div>
 
-
-                    <div className="top-bar">
-
-                        <div className="search-box">
-
-                            <Search />
-
-                            <input
-                                type="text"
-                                placeholder="FIND COMPETITIORS....."
-                            />
-
+                            <div className="stats-item">
+                                <div className="stats-info">
+                                    <span>GLOBAL RANK</span>
+                                    <strong>442nd</strong>
+                                </div>
+                                
+                            </div>
                         </div>
-
-
-                        <div className="topbar-actions">
-
-                            <button>
-                                <Moon />
-                            </button>
-
-                            <button>
-                                <Settings />
-                            </button>
-
-                            <button className="profile">
-
-                                <UserCircle />
-
-                                <span>
-                                    PROGRAMER_99
-                                </span>
-
-                            </button>
-
-                        </div>
-
                     </div>
-
-
-                    <div className="dashboard-cards">
-
-                        <WelcomeCard />
-
-                        <StatsCard />
-
-                    </div>
-
-
-                    <ActiveModules />
-
-
-                </main>
-
-            </div>
+                </div>     */}
+            </main>
+        </div>
         </>
-    );
+    )
 }
-
-
-export default Dashboard;
-
+export default Dashboard
