@@ -143,19 +143,19 @@ function ActiveModules() {
                     {/* COLOUR CLASH */}
                     <div className="module-card">
 
-                        <Keyboard />
+                     <Keyboard />
 
-                        <h3>COLOUR CLASH</h3>
+                    <h3>COLOUR CLASH</h3>
 
-                        <p>
-                            Challenge your memory and focus.
-                        </p>
+                    <p>
+                 Challenge your memory and focus.
+                </p>
 
-                        <button>
-                            LAUNCH
-                        </button>
+                <button onClick={() => window.location.href = "/color-clash"}>
+                LAUNCH
+                 </button>
 
-                    </div>
+                </div>
 
 
                     {/* NUMBER RUSH */}
