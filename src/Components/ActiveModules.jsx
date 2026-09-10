@@ -113,7 +113,7 @@ function ActiveModules() {
                             Test how fast you can click.
                         </p>
                         <button>
-                            LAUNCH
+                            Coming Soon!
                         </button>
                     </div>
 
@@ -135,7 +135,7 @@ function ActiveModules() {
                             Test how quickly you can react.
                         </p>
                         <button>
-                            LAUNCH
+                            Coming Soon!
                         </button>
                     </div>
 
@@ -146,7 +146,7 @@ function ActiveModules() {
                             Challenge your speed with words.
                         </p>
                         <button>
-                            LAUNCH
+                            Coming Soon!
                         </button>
                     </div>
 
@@ -157,7 +157,7 @@ function ActiveModules() {
                             Improve your clicking precision.
                         </p>
                         <button>
-                            LAUNCH
+                            Coming Soon!
                         </button>
                     </div>
 
@@ -168,7 +168,7 @@ function ActiveModules() {
                             Push your reflexes to the limit.
                         </p>
                         <button>
-                            LAUNCH
+                            Coming Soon!
                         </button>
                     </div>
 
@@ -179,7 +179,7 @@ function ActiveModules() {
                             Test your accuracy and control.
                         </p>
                         <button>
-                            LAUNCH
+                            Coming Soon!
                         </button>
                     </div>
                 </div>
