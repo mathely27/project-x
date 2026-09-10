@@ -33,7 +33,7 @@ function Dashboard(){
                         onClick={() => setActiveMenu('dashboard')}>
                             <LayoutDashboard />DASHBOARD</p>
                     <p   className={activeMenu === 'typing' ? 'active' : ''}
-                            onClick={() => setActiveMenu('typing')}><Keyboard />TYPING TEST</p>
+                            onClick={() => setActiveMenu('typing')}><Keyboard />MEMORY TYPING</p>
                     <p   className={activeMenu === 'cps' ? 'active' : ''}
                             onClick={() => setActiveMenu('cps')}> <Mouse/>CPS KING</p>
                     <p   className={activeMenu === 'reaction' ? 'active' : ''}
