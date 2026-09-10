@@ -225,6 +225,30 @@ cursor: pointer;
   color: #111111;
 }
 
+/* .welcome-card{
+  /* background-color: #f8441c;; */
+    /* background: linear-gradient(
+        120deg,
+        #dffcff 0%,
+        #eef5ff 45%,
+        #fff0f8 100%
+    ); */
+     /* background: linear-gradient(
+      135deg,
+      #1A1A1A 0%,
+      #14181F 100%
+  );
+  width:650px;
+  height:500px;
+        border:5px solid black;
+  box-shadow:7px 7px 0 black;
+  display:flex;
+  /* align-items:center; */
+  /* flex-direction:row;
+  padding:20px;
+  flex:1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /*text bahar jara tha*/
 .welcome-card{
   /* background-color: #f8441c;; */
     /* background: linear-gradient(
