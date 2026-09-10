@@ -1,4 +1,4 @@
-import gamerImage from "../assets/welcome-image.png";
+import gamerImage from "../assets/pfplogo.png";
 
 function WelcomeCard() {
     return(
