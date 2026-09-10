@@ -1,6 +1,7 @@
 import WelcomeCard from "../Components/WelcomeCard";
 import StatsCard from "../Components/StatsCard";
 import ActiveModules from "../Components/ActiveModules";
+import MemoryTyping from "./MemoryTyping";
 import {
   LayoutDashboard,
   Keyboard,
@@ -70,11 +71,15 @@ function Dashboard(){
 
 
                 </div>
+                {activeMenu === "typing"?(
+                    <MemoryTyping/>
+                ):(
+                    <>
                 <div className="dashboard-cards">
                     <WelcomeCard />
                     <StatsCard/>
                 </div>
-                <ActiveModules/>
+                <ActiveModules setActiveMenu={setActiveMenu} />
                 {/* <div className="stats-card">
                     <div calssName="stats-title">
                         <BarChart3/>
@@ -108,6 +113,8 @@ function Dashboard(){
                         </div>
                     </div>
                 </div>     */}
+                </>
+                )}
             </main>
         </div>
         </>

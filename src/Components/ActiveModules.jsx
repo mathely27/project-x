@@ -85,7 +85,7 @@
 import { Keyboard, Mouse, Timer } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-function ActiveModules() {
+function ActiveModules({setActiveMenu}) {
     const navigate = useNavigate();
 
     return (
@@ -100,7 +100,7 @@ function ActiveModules() {
                             Test your typing speed and accuracy.
                         </p>
                         <button
-                            onClick={() => navigate("/memory-typing")}
+                            onClick={() => setActiveMenu("typing")}
                         >
                             LAUNCH
                         </button>
