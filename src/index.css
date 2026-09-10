@@ -257,7 +257,7 @@ cursor: pointer;
     box-shadow: 10px 10px 0 #ff8c00;
 }
 
-.welcome-img {
+/* .welcome-img {
   width: 280px;
   height: 310px;
   object-fit: cover;
@@ -265,6 +265,19 @@ cursor: pointer;
     border:5px solid black;
   box-shadow:7px 7px 0 black;
   margin:20px 10px;
+
+} */
+.welcome-img {
+  /* width: 280px;
+  height: 310px; */
+  width: 320px;
+  height: 380px;
+  object-fit: contain;
+  /* transform: translateY(60px)  rotate(3deg); */
+transform: rotate(-3deg);
+  /* margin:20px 10px; */
+   margin: 10px 15px; 
+    align-self: center;  
 
 }
 .welcome-info{
