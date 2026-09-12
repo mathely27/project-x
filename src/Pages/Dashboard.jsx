@@ -22,6 +22,10 @@ function Dashboard(){
     const [activeMenu, setActiveMenu] = useState('dashboard')
     return (
         <>
+
+        {activeMenu === "typing" ? (
+            <MemoryTyping />
+        ) : (
         <div className="dashboard">
             <aside className="sidebar">
                 <div className="logo">
@@ -115,9 +119,10 @@ function Dashboard(){
                 </div>     */}
                 </>
                 )}
-            </main>
-        </div>
-        </>
+      </main>
+</div>
+)}
+</>
     )
 }
 export default Dashboard
