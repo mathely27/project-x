@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { BackgroundPixelStars } from "../Components/BackgroundPixelStars";
+import ConstellationGrid from "../Components/ConstellationGrid";
+import GlitchText from "../Components/GlitchText";
 
 function Landing() {
 
@@ -7,21 +8,15 @@ function Landing() {
 
     return (
         <div className="landing-page">
-              <BackgroundPixelStars />
-
+            <ConstellationGrid />
             <div className="landing-content">
-              
-
-                <h1>CLUTCH</h1>
-
-                
-
+                <GlitchText speed={0.5} enableShadows={true} enableOnHover={false}>
+                    CLUTCH
+                </GlitchText>
                 <button onClick={() => navigate("/dashboard")}>
                     GET STARTED
                 </button>
-
             </div>
-
         </div>
     );
 }
