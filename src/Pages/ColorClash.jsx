@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./ColorClash.css";
+import { House } from "lucide-react";
 
 const COLORS = [
   { name: "RED", value: "#ef4444" },
@@ -173,6 +174,8 @@ export default function ColorClashGame({ username = "Player", onGameComplete }) 
   if (step === "INTRO") {
     return (
       <div className="cc-game">
+        <button className="back-button" onClick={()=>Navigate("/dashboard")}><House size={44}/></button>
+
         <div className="cc-glow cc-glow-one" />
         <div className="cc-glow cc-glow-two" />
 

@@ -24,7 +24,7 @@ function Dashboard(){
         <>
 
         {activeMenu === "typing" ? (
-            <MemoryTyping />
+            <MemoryTyping onBack={()=>setActiveMenu("dashboard")}/>
         ) : (
         <div className="dashboard">
             <aside className="sidebar">
@@ -76,7 +76,7 @@ function Dashboard(){
 
                 </div>
                 {activeMenu === "typing"?(
-                    <MemoryTyping/>
+                    <MemoryTyping onBack={()=>setActiveMenu("dashboard")}/>
                 ):(
                     <>
                 <div className="dashboard-cards">

@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { House } from "lucide-react";
 import "./MemoryTyping.css";
+import { useNavigate } from "react-router-dom";
 
 const subjects = [
   "The young explorer",
@@ -48,7 +49,7 @@ function randomItem(array) {
 function generateParagraph() {
   const sentences = [];
 
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 1; i++) {
     const sentence =
       `${randomItem(subjects)} ` +
       `${randomItem(actions)} ` +
@@ -62,7 +63,7 @@ function generateParagraph() {
   return sentences.join(" ");
 }
 
-function MemoryTyping() {
+function MemoryTyping({onBack}) {
   const navigate = useNavigate();
   const [gameTime, setGameTime] = useState(15);
   const [phase, setPhase] = useState("setup");
@@ -206,7 +207,7 @@ function MemoryTyping() {
           <span>MEMORY TYPING</span>
         </div>
       </header> */}
-      <button className="back-button" onClick={()=>navigate("/dashboard")}> # </button>
+      <button className="back-button" onClick={onBack}> <House size={44}/></button>
 
 
       {phase === "setup" && (
