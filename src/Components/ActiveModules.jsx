@@ -123,7 +123,7 @@ function ActiveModules({setActiveMenu}) {
                         <p>
                             Challenge your memory and focus.
                         </p>
-                        <button onClick={() => window.location.href = "/color-clash"}>
+                        <button onClick={() => navigate("/color-clash")}>
                             LAUNCH
                         </button>
                     </div>
