@@ -16,6 +16,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard";
 import MemoryTyping from "./Pages/MemoryTyping";
 import ColorClash from "./Pages/ColorClash";
+import Landing from "./Pages/Landing";
 
 function App() {
 
@@ -23,11 +24,8 @@ function App() {
         <BrowserRouter>
 
             <Routes>
-
-                <Route
-                    path="/"
-                    element={<Dashboard />}
-                />
+<Route path="/" element={<Landing />} />
+<Route path="/dashboard" element={<Dashboard />} />
 
                 <Route
                     path="/memory-typing"

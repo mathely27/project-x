@@ -3,6 +3,96 @@
   padding:0px;
   box-sizing:border-box;
 }
+.landing-page {
+    width: 100%;
+    height: 100vh;
+    background-color: #111111;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background */
+.landing-page canvas {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+/* Main content */
+.landing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* CLUTCH */
+.landing-content h1 {
+    margin: 0;
+    margin-bottom: 70px;
+
+    font-size: 150px;
+    font-weight: bold;
+    font-style: italic;
+
+    color: #F5F5F5;
+
+    letter-spacing: 5px;
+
+    text-shadow: 8px 8px 0 #FF8C42;
+}
+
+/* GET STARTED button */
+.landing-content button {
+    background-color: #FF8C42;
+    color: #111111;
+
+    border: 4px solid black;
+    box-shadow: 7px 7px 0 black;
+
+    padding: 15px 40px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* Button hover */
+.landing-content button:hover {
+    background-color: #F5F5F5;
+    color: #111111;
+
+    box-shadow: 3px 3px 0 black;
+
+    transform: translate(4px, 4px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 body{
   background-color: #111111;
