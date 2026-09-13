@@ -4,7 +4,7 @@
 
 **Speed. Focus. Memory. One platform.**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?style=flat-square&logo=vercel)](https://clutch-game.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?style=flat-square&logo=vercel)](project-x-navy-eight.vercel.app)
 [![React](https://img.shields.io/badge/React-Vite-61DAFB?style=flat-square&logo=react)](https://react.dev)
 [![License](https://img.shields.io/badge/License-MIT-white?style=flat-square)](LICENSE)
 
