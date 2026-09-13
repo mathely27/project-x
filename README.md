@@ -1,16 +1,54 @@
-# React + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# CLUTCH
 
-Currently, two official plugins are available:
+**Speed. Focus. Memory. One platform.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?style=flat-square&logo=vercel)](https://clutch-game.vercel.app)
+[![React](https://img.shields.io/badge/React-Vite-61DAFB?style=flat-square&logo=react)](https://react.dev)
+[![License](https://img.shields.io/badge/License-MIT-white?style=flat-square)](LICENSE)
 
-## React Compiler
+</div>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+CLUTCH is a cognitive performance platform with a suite of brain-training mini-games. Train your typing speed, test your color perception, and sharpen your focus — all in one dark, fast, competitive interface.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Games
+
+| Module | Status | Description |
+|---|---|---|
+| ⌨️ Memory Typing | ✅ Live | Read a paragraph, memorize it, then type it from memory |
+| 🎨 Colour Clash | ✅ Live | Stroop effect — identify the text color, not the word |
+| 🖱️ CPS King | 🔒 Soon | Click speed test |
+| ⏱️ Reaction Time | 🔒 Soon | Visual reaction speed |
+| 🔢 Number Rush | 🔒 Soon | Number memory and sequencing |
+
+## Stack
+
+| Layer | Tech |
+|---|---|
+| Frontend | React + Vite |
+| Routing | React Router DOM |
+| Icons | Lucide React |
+| Database | Supabase |
+| Deployment | Vercel |
+
+## Run Locally
+
+```bash
+git clone https://github.com/mathely27/project-x.git
+cd project-x
+npm install
+npm run dev
+```
+
+## Team
+
+Built by **Mathely**, **Keerat**, and **Chaitali** · Chitkara University · FEE Project
+
+---
+
+<div align="center">
+  <sub>Submitted to Dr. Niket · Front-End Engineering</sub>
+</div>
