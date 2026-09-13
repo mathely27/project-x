@@ -100,7 +100,7 @@ function ActiveModules({setActiveMenu}) {
                             Test your typing speed and accuracy.
                         </p>
                         <button
-                            onClick={() => setActiveMenu("typing")}
+                            onClick={() =>navigate("/memory-typing")}
                         >
                             LAUNCH
                         </button>

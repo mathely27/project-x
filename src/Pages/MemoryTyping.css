@@ -6,9 +6,10 @@
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     position: relative;
-    overflow: hidden;
     border-radius: 45px;
+    overflow: hidden; 
 }
+
 
 .memory-header {
     position: absolute;
@@ -61,7 +62,7 @@
 
 .memory-setup h1 {
     margin: 0;
-    color: #ff8c00;
+    color: #ffb29e;
     font-size: 7rem;
     font-weight: 900;
     line-height: 0.9;
@@ -131,22 +132,25 @@
 }
 
 .start-game {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    padding: 20px 38px;
-    min-width: 350px;
+       width: min(600px, 100%);
+    margin-top: 18px;
+    padding: 19px;
+    border: none;
+    border-radius: 0;
     background: #ff8c00;
     color: #111111;
-    border: none;
-    border-radius: 40px;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 900;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     cursor: pointer;
-    box-shadow: 0 0 0 2px #111111, 0 0 0 4px #ff8c00;
+    box-shadow: 7px 7px 0 #777;
     transition: all 0.2s ease;
+}
+.start-game:hover{
+    transform: translate(-3px, -3px);
+    background: #ffb29e;
+    box-shadow: 10px 10px 0 #777;
+
 }
 
 .arrow {
@@ -167,11 +171,11 @@
 .memory-game::before {
     content: "";
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
-    left: -155px;
-    bottom: -135px;
+    left: -225px;
+    bottom: -200px;
     border: 2px solid rgba(255, 140, 0, 0.55);
     background: radial-gradient(
         circle,
@@ -185,11 +189,11 @@
 .memory-game::after {
     content: "";
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
-    right: -155px;
-    top: -135px;
+    right: -225px;
+    top: -200px;
     border: 2px solid rgba(255, 140, 0, 0.55);
     background: radial-gradient(
         circle,
@@ -380,8 +384,9 @@
     }
 
     .memory-setup h1 {
-        font-size: 5rem;
+        font-size: 4rem;
         letter-spacing: -3px;
+        white-space:nowrap;
     }
 
     .memory-setup p {
@@ -466,4 +471,48 @@
 .memory-setup::after {
     right: calc(50% - 310px);
     transform: scaleX(-1);
+}
+
+
+
+
+
+
+
+
+.back-button {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #ff8a00;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff8a00, #ff4f81);
+  color: white;
+  font-size: 43px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 20;
+  pointer-events:auto;
+  transition: 0.3s ease;
+}
+
+.back-button:hover {
+  transform: translateX(-4px) scale(1.08);
+  box-shadow: 0 0 20px rgba(255, 138, 0, 0.6);
+}
+
+
+.start-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-line {
+  width: 250px;
+  height: 4px;
+  background: #ff8c00;
+  margin-top: 50px;
 }

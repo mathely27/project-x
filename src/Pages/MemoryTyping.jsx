@@ -199,13 +199,15 @@ function MemoryTyping() {
 
   return (
     <div className="memory-game">
-      <header className="memory-header">
+      {/* <header className="memory-header">
         <div className="memory-logo">
           <span className="brain-icon">🧠</span>
           <span className="logo-divider"></span>
           <span>MEMORY TYPING</span>
         </div>
-      </header>
+      </header> */}
+      <button className="back-button" onClick={()=>navigate("/dashboard")}> # </button>
+
 
       {phase === "setup" && (
         <div className="memory-setup">
@@ -239,10 +241,12 @@ function MemoryTyping() {
             className="start-game"
             onClick={startGame}
           >
-            START MEMORY TEST
+            START GAME
             <span className="arrow">→</span>
           </button>
+          <div className="bottom-line"></div>
         </div>
+        
       )}
 
       {phase === "memorize" && (
