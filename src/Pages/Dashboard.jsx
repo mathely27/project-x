@@ -2,6 +2,7 @@ import WelcomeCard from "../Components/WelcomeCard";
 import StatsCard from "../Components/StatsCard";
 import ActiveModules from "../Components/ActiveModules";
 import MemoryTyping from "./MemoryTyping";
+import ColorClash from "./ColorClash";
 import {
   LayoutDashboard,
   Keyboard,
@@ -14,7 +15,7 @@ import {
   UserCircle,
   
 } from 'lucide-react'
-import {useState} from 'react'; 
+import {useState} from 'react';
 
 
 
@@ -25,6 +26,8 @@ function Dashboard(){
 
         {activeMenu === "typing" ? (
             <MemoryTyping onBack={()=>setActiveMenu("dashboard")}/>
+        ) : activeMenu === "colorClash" ? (
+            <ColorClash />
         ) : (
         <div className="dashboard">
             <aside className="sidebar">
@@ -39,8 +42,8 @@ function Dashboard(){
                             <LayoutDashboard />DASHBOARD</p>
                     <p   className={activeMenu === 'typing' ? 'active' : ''}
                             onClick={() => setActiveMenu('typing')}><Keyboard />MEMORY TYPING</p>
-                    <p   className={activeMenu === 'cps' ? 'active' : ''}
-                            onClick={() => setActiveMenu('cps')}> <Mouse/>COLOR CLASH</p>
+                    <p   className={activeMenu === 'colorClash' ? 'active' : ''}
+                            onClick={() => setActiveMenu('colorClash')}> <Mouse/>COLOR CLASH</p>
                     <p   className={activeMenu === 'reaction' ? 'active' : ''}
                             onClick={() => setActiveMenu('reaction')}><Timer/>REACTION TIME</p>
                     <p   className={activeMenu === 'leaderboard' ? 'active' : ''}
@@ -84,39 +87,7 @@ function Dashboard(){
                     <StatsCard/>
                 </div>
                 <ActiveModules setActiveMenu={setActiveMenu} />
-                {/* <div className="stats-card">
-                    <div calssName="stats-title">
-                        <BarChart3/>
-                        <h3>
-                            YOUR_STATS
-                        </h3>
-                        <div className="stats-list">
-                            <div className="stats-item">
-                                <div className="stats-info">
-                                    <span>PEAK SPEED</span>
-                                    <strong>148 WPM</strong>
-                                </div>
-                                
-                            </div>
-
-                            <div className="stats-item">
-                                <div className="stats-info">
-                                    <span>CLICK POWER</span>
-                                    <strong>14.2 CPS</strong>
-                                </div>
-                                
-                            </div>
-
-                            <div className="stats-item">
-                                <div className="stats-info">
-                                    <span>GLOBAL RANK</span>
-                                    <strong>442nd</strong>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>     */}
+                
                 </>
                 )}
       </main>
