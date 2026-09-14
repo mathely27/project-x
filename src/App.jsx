@@ -19,25 +19,29 @@ import ColorClash from "./Pages/ColorClash";
 import Landing from "./Pages/Landing";
 
 function App() {
-
     return (
         <BrowserRouter>
-
             <Routes>
-<Route path="/" element={<Landing />} />
-<Route path="/dashboard" element={<Dashboard />} />
 
+              
+                <Route path="/" element={<Landing />} />
+
+               
+                <Route path="/dashboard" element={<Dashboard />} />
+
+              
                 <Route
                     path="/memory-typing"
                     element={<MemoryTyping />}
                 />
-                 <Route
+
+              
+                <Route
                     path="/color-clash"
                     element={<ColorClash />}
                 />
 
             </Routes>
-
         </BrowserRouter>
     );
 }
