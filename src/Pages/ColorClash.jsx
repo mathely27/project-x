@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./ColorClash.css";
 import { House } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import BackgroundPixelStars from "../Components/BackgroundPixelStars";
 
 const COLORS = [
   { name: "RED", value: "#ef4444" },
@@ -31,7 +32,7 @@ const createQuestion = () => {
 
 const createOptions = () => shuffleArray(COLORS);
 
-export default function ColorClashGame({ username = "Player", onGameComplete }) {
+export default function ColorClashGame({ username = "Player", onGameComplete, onBack }) {
   const navigate = useNavigate();
   const [step, setStep] = useState("INTRO");
   const [question, setQuestion] = useState(1);
@@ -153,11 +154,19 @@ export default function ColorClashGame({ username = "Player", onGameComplete }) 
   if (step === "INTRO") {
     return (
       <div className="cc-game">
-        <button className="back-button" onClick={() => navigate("/dashboard")}>
-          <House size={44} />
-        </button>
-        <div className="cc-glow cc-glow-one" />
-        <div className="cc-glow cc-glow-two" />
+        
+  <BackgroundPixelStars />
+
+  <button className="back-button" onClick={onBack}>
+    <House size={44} />
+  </button>
+
+  <div className="cc-glow cc-glow-one" />
+  <div className="cc-glow cc-glow-two" />
+
+  
+
+        
         <div className="cc-intro">
           <div className="cc-mini-label">REACTION GAME</div>
           <h1 className="cc-title">COLOR <span>CLASH</span></h1>
@@ -178,6 +187,8 @@ export default function ColorClashGame({ username = "Player", onGameComplete }) 
 
     return (
       <div className="cc-game">
+        <BackgroundPixelStars/>
+
         <div className="cc-glow cc-glow-one" />
         <div className="cc-glow cc-glow-two" />
         <div className="cc-play-area">
@@ -225,6 +236,7 @@ export default function ColorClashGame({ username = "Player", onGameComplete }) 
 
   return (
     <div className="cc-game">
+      <BackgroundPixelStars/>
       <div className="cc-glow cc-glow-one" />
       <div className="cc-glow cc-glow-two" />
       <div className="cc-result">
