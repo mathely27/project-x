@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { House } from "lucide-react";
 import "./MemoryTyping.css";
 import { useNavigate } from "react-router-dom";
-
+import BackgroundPixelStars from "../Components/BackgroundPixelStars";
 const subjects = [
   "The young explorer",
   "A curious scientist",
@@ -200,6 +200,7 @@ function MemoryTyping({onBack}) {
 
   return (
     <div className="memory-game">
+    <BackgroundPixelStars/>
       {/* <header className="memory-header">
         <div className="memory-logo">
           <span className="brain-icon">🧠</span>

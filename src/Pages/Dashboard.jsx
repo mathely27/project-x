@@ -40,7 +40,7 @@ function Dashboard(){
                     <p   className={activeMenu === 'typing' ? 'active' : ''}
                             onClick={() => setActiveMenu('typing')}><Keyboard />MEMORY TYPING</p>
                     <p   className={activeMenu === 'cps' ? 'active' : ''}
-                            onClick={() => setActiveMenu('cps')}> <Mouse/>CPS KING</p>
+                            onClick={() => setActiveMenu('cps')}> <Mouse/>COLOR CLASH</p>
                     <p   className={activeMenu === 'reaction' ? 'active' : ''}
                             onClick={() => setActiveMenu('reaction')}><Timer/>REACTION TIME</p>
                     <p   className={activeMenu === 'leaderboard' ? 'active' : ''}
