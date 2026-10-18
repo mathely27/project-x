@@ -27,7 +27,7 @@ function Dashboard(){
         {activeMenu === "typing" ? (
             <MemoryTyping onBack={()=>setActiveMenu("dashboard")}/>
         ) : activeMenu === "colorClash" ? (
-            <ColorClash />
+            <ColorClash onBack={()=> setActiveMenu("dashboard")} />
         ) : (
         <div className="dashboard">
             <aside className="sidebar">
