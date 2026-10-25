@@ -4,6 +4,8 @@ import StatsCard from "../Components/StatsCard";
 import ActiveModules from "../Components/ActiveModules";
 import MemoryTyping from "./MemoryTyping";
 import ColorClash from "./ColorClash";
+import F1Reaction from "./F1Reaction";
+import CpsTest from "./CpsTest";
 
 import {
   LayoutDashboard,
@@ -47,6 +49,10 @@ function Dashboard() {
         <MemoryTyping onBack={() => setActiveMenu("dashboard")} />
       ) : activeMenu === "colorClash" ? (
         <ColorClash onBack={() => setActiveMenu("dashboard")} />
+      ) : activeMenu === "reaction" ? (
+        <F1Reaction onBack={() => setActiveMenu("dashboard")} />
+      ) : activeMenu === "cpsKing" ? (
+        <CpsTest onBack={() => setActiveMenu("dashboard")} />
       ) : (
         <div className="dashboard">
           <aside className="sidebar">
@@ -81,7 +87,7 @@ function Dashboard() {
 
               <p
                 className={activeMenu === "reaction" ? "active" : ""}
-                onClick={() => setActiveMenu("reaction")}
+                onClick={() => openGame("reaction")}
               >
                 <Timer />
                 REACTION TIME
