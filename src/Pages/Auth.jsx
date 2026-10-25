@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  House,
-  Mail,
+  UserRound,
   LockKeyhole,
   Eye,
   EyeOff,
@@ -13,20 +12,23 @@ import { useAuth } from "../Context/AuthContext";
 import "./Auth.css";
 
 export default function Auth() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+  const [stageName, setStageName] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
     setError("");
 
-    if (!email.trim() || !password) {
-      setError("Please enter your email and password.");
+    const enteredStageName = stageName.trim().toLowerCase();
+
+    if (!enteredStageName || !password) {
+      setError("Please enter your stage name and password.");
       return;
     }
 
@@ -36,19 +38,24 @@ export default function Auth() {
       accounts = JSON.parse(
         localStorage.getItem("clutchAccounts") || "[]"
       );
+
+      if (!Array.isArray(accounts)) {
+        setError("Saved account data is invalid.");
+        return;
+      }
     } catch {
-      setError("Unable to read saved accounts.");
+      setError("Unable to read saved accounts. Please try again.");
       return;
     }
 
     const account = accounts.find(
-      (user) =>
-        user.email?.toLowerCase() === email.trim().toLowerCase() &&
-        user.password === password
+      (item) =>
+        item.stageName?.trim().toLowerCase() === enteredStageName &&
+        item.password === password
     );
 
     if (!account) {
-      setError("Incorrect email or password. Please try again.");
+      setError("Incorrect stage name or password.");
       return;
     }
 
@@ -58,49 +65,30 @@ export default function Auth() {
       favouriteGame: account.favouriteGame,
     });
 
-    navigate("/dashboard");
-  };
+    navigate("/dashboard", { replace: true });
+  }
 
   return (
     <div className="auth-page">
-      <button
-        className="auth-home"
-        type="button"
-        onClick={() => navigate("/")}
-      >
-        <House size={18} />
-        <span>Back to Home</span>
-      </button>
-
       <main className="login-wrapper">
-        <div className="auth-brand">
-          <h1>CLUTCH</h1>
-          <p>PLAY. IMPROVE. CHALLENGE.</p>
-        </div>
-
         <section className="auth-card">
-          <div className="auth-heading">
-            <h2>
-              Welcome <span>Back</span>
-            </h2>
-            <p>Login to continue your gaming journey</p>
-          </div>
-
-          <form onSubmit={handleLogin}>
-            {/* Email */}
+          <form onSubmit={handleSubmit} noValidate>
             <label className="auth-input">
-              <Mail size={20} />
+              <UserRound size={20} />
               <input
-                type="email"
-                placeholder="Email address"
-                aria-label="Email address"
-                autoComplete="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                placeholder="Stage Name"
+                aria-label="Stage Name"
+                autoComplete="username"
+                value={stageName}
+                onChange={(event) => {
+                  setStageName(event.target.value);
+                  setError("");
+                }}
+                required
               />
             </label>
 
-            {/* Password */}
             <label className="auth-input">
               <LockKeyhole size={20} />
               <input
@@ -109,13 +97,17 @@ export default function Auth() {
                 aria-label="Password"
                 autoComplete="current-password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                  setError("");
+                }}
+                required
               />
 
               <button
                 type="button"
                 className="password-toggle"
-                onClick={() => setShowPassword(!showPassword)}
+                onClick={() => setShowPassword((previous) => !previous)}
                 aria-label="Toggle password visibility"
               >
                 {showPassword ? (
@@ -126,10 +118,13 @@ export default function Auth() {
               </button>
             </label>
 
-            {/* Remember Me and Forgot Password */}
             <div className="auth-options">
               <label className="remember-option">
-                <input type="checkbox" defaultChecked />
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={(event) => setRememberMe(event.target.checked)}
+                />
                 <span>Remember me</span>
               </label>
 
@@ -144,7 +139,6 @@ export default function Auth() {
               </button>
             </div>
 
-            {/* Error Message */}
             {error && (
               <p
                 className="auth-form-message auth-form-error"
@@ -154,26 +148,12 @@ export default function Auth() {
               </p>
             )}
 
-            {/* Login Button */}
             <button className="auth-primary" type="submit">
               Login
               <ArrowRight size={19} />
             </button>
           </form>
 
-          <div className="auth-divider">
-            <span />
-            <p>OR</p>
-            <span />
-          </div>
-
-          {/* Google Login - UI Only */}
-          <button className="auth-social" type="button">
-            <span className="google-icon">G</span>
-            Continue with Google
-          </button>
-
-          {/* Signup Navigation */}
           <p className="auth-switch">
             Don't have an account?{" "}
             <button
@@ -184,10 +164,6 @@ export default function Auth() {
             </button>
           </p>
         </section>
-
-        <p className="auth-footer">
-          YOUR NEXT HIGH SCORE STARTS HERE.
-        </p>
       </main>
     </div>
   );

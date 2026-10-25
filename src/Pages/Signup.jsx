@@ -1,15 +1,12 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  House,
   UserRound,
   Mail,
   LockKeyhole,
   Eye,
   EyeOff,
   ArrowRight,
-  Gamepad2,
 } from "lucide-react";
 
 import { useAuth } from "../Context/AuthContext";
@@ -27,7 +24,6 @@ export default function Signup() {
     email: "",
     password: "",
     confirmPassword: "",
-    favouriteGame: "",
     terms: false,
   });
 
@@ -53,12 +49,12 @@ export default function Signup() {
     const password = formData.password;
     const confirmPassword = formData.confirmPassword;
 
-    if (!stageName || !email || !password || !confirmPassword) {
+    if (!stageName || !password || !confirmPassword) {
       setError("Please fill in all required fields.");
       return;
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError("Please enter a valid email address.");
       return;
     }
@@ -81,11 +77,12 @@ export default function Signup() {
     let storedAccounts = [];
 
     try {
-      const savedAccounts = localStorage.getItem("clutchAccounts");
-      storedAccounts = savedAccounts ? JSON.parse(savedAccounts) : [];
+      storedAccounts = JSON.parse(
+        localStorage.getItem("clutchAccounts") || "[]"
+      );
 
       if (!Array.isArray(storedAccounts)) {
-        setError("Saved account data is invalid. Please contact support.");
+        setError("Saved account data is invalid. Please try again.");
         return;
       }
     } catch {
@@ -93,13 +90,24 @@ export default function Signup() {
       return;
     }
 
-    const emailExists = storedAccounts.some(
-      (account) =>
-        account.email?.trim().toLowerCase() === email
-    );
-
-    if (emailExists) {
+    if (
+      email &&
+      storedAccounts.some(
+        (account) => account.email?.trim().toLowerCase() === email
+      )
+    ) {
       setError("An account with this email already exists. Please log in.");
+      return;
+    }
+
+    if (
+      storedAccounts.some(
+        (account) =>
+          account.stageName?.trim().toLowerCase() ===
+          stageName.toLowerCase()
+      )
+    ) {
+      setError("This stage name is already taken. Please choose another.");
       return;
     }
 
@@ -107,15 +115,12 @@ export default function Signup() {
       stageName,
       email,
       password,
-      favouriteGame: formData.favouriteGame,
     };
-
-    const updatedAccounts = [...storedAccounts, newAccount];
 
     try {
       localStorage.setItem(
         "clutchAccounts",
-        JSON.stringify(updatedAccounts)
+        JSON.stringify([...storedAccounts, newAccount])
       );
     } catch {
       setError("Could not save your account. Please try again.");
@@ -125,7 +130,6 @@ export default function Signup() {
     signup({
       stageName: newAccount.stageName,
       email: newAccount.email,
-      favouriteGame: newAccount.favouriteGame,
     });
 
     navigate("/dashboard", { replace: true });
@@ -133,37 +137,16 @@ export default function Signup() {
 
   return (
     <div className="auth-page">
-      <button
-        className="auth-home"
-        type="button"
-        onClick={() => navigate("/")}
-      >
-        <House size={18} />
-        <span>Back to Home</span>
-      </button>
-
       <main className="login-wrapper">
-        <div className="auth-brand">
-          <h1>CLUTCH</h1>
-          <p>PLAY. IMPROVE. CHALLENGE.</p>
-        </div>
-
         <section className="auth-card signup-card">
-          <div className="auth-heading">
-            <h2>
-              Join the <span>Game</span>
-            </h2>
-            <p>Create your account and start your journey</p>
-          </div>
-
           <form onSubmit={handleSubmit} noValidate>
             <label className="auth-input">
               <UserRound size={20} />
               <input
                 type="text"
                 name="stageName"
-                placeholder="Stagename"
-                aria-label="Stagename"
+                placeholder="Stage Name"
+                aria-label="Stage Name"
                 autoComplete="nickname"
                 value={formData.stageName}
                 onChange={handleChange}
@@ -176,12 +159,11 @@ export default function Signup() {
               <input
                 type="email"
                 name="email"
-                placeholder="Email address"
-                aria-label="Email address"
+                placeholder="Email address (Optional)"
+                aria-label="Email address (Optional)"
                 autoComplete="email"
                 value={formData.email}
                 onChange={handleChange}
-                required
               />
             </label>
 
@@ -197,6 +179,7 @@ export default function Signup() {
                 onChange={handleChange}
                 required
               />
+
               <button
                 type="button"
                 className="password-toggle"
@@ -219,6 +202,7 @@ export default function Signup() {
                 onChange={handleChange}
                 required
               />
+
               <button
                 type="button"
                 className="password-toggle"
@@ -235,24 +219,6 @@ export default function Signup() {
               </button>
             </label>
 
-            <label className="auth-input">
-              <Gamepad2 size={20} />
-              <select
-                className="signup-select"
-                name="favouriteGame"
-                value={formData.favouriteGame}
-                onChange={handleChange}
-                aria-label="Favourite game (optional)"
-              >
-                <option value="">Favourite game (Optional)</option>
-                <option value="memory-typing">Memory Typing</option>
-                <option value="color-clash">Color Clash</option>
-                <option value="cps-test">CPS Test</option>
-                <option value="reaction-time">Reaction Time</option>
-                <option value="number-rush">Number Rush</option>
-              </select>
-            </label>
-
             <label className="terms-option">
               <input
                 type="checkbox"
@@ -261,6 +227,7 @@ export default function Signup() {
                 onChange={handleChange}
                 required
               />
+
               <span>
                 I agree to the <a href="#terms">Terms of Service</a> and{" "}
                 <a href="#privacy">Privacy Policy</a>.
@@ -274,29 +241,10 @@ export default function Signup() {
             )}
 
             <button className="auth-primary" type="submit">
-              Create Account
+              Sign Up
               <ArrowRight size={19} />
             </button>
           </form>
-
-          <div className="auth-divider">
-            <span />
-            <p>OR</p>
-            <span />
-          </div>
-
-          <button className="auth-social" type="button">
-            <span className="google-icon">G</span>
-            Continue with Google
-          </button>
-
-          <button
-            className="auth-social signup-github"
-            type="button"
-          >
-            <span className="github-icon">⌘</span>
-            Continue with GitHub
-          </button>
 
           <p className="auth-switch">
             Already have an account?{" "}
@@ -305,12 +253,7 @@ export default function Signup() {
             </button>
           </p>
         </section>
-
-        <p className="auth-footer">
-          YOUR NEXT HIGH SCORE STARTS HERE.
-        </p>
       </main>
     </div>
   );
 }
-
