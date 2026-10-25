@@ -1,11 +1,18 @@
 
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import WelcomeCard from "../Components/WelcomeCard";
 import StatsCard from "../Components/StatsCard";
 import ActiveModules from "../Components/ActiveModules";
+
 import MemoryTyping from "./MemoryTyping";
 import ColorClash from "./ColorClash";
 import F1Reaction from "./F1Reaction";
 import CpsTest from "./CpsTest";
+
+import { useAuth } from "../Context/AuthContext";
+import { useTheme } from "../Context/ThemeContext";
 
 import {
   LayoutDashboard,
@@ -15,19 +22,17 @@ import {
   Trophy,
   Search,
   Moon,
+  Sun,
   Settings,
   UserCircle,
 } from "lucide-react";
-
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../Context/AuthContext";
 
 function Dashboard() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
 
   const navigate = useNavigate();
   const { user, isAuthenticated, logout } = useAuth();
+  const { theme, toggleTheme } = useTheme();
 
   const openGame = (game) => {
     if (!isAuthenticated) {
@@ -106,10 +111,7 @@ function Dashboard() {
               <button type="button">GO_PRO</button>
               <p>? HELP</p>
 
-              <p
-                onClick={handleLogout}
-                style={{ cursor: "pointer" }}
-              >
+              <p onClick={handleLogout} style={{ cursor: "pointer" }}>
                 ↪ LOGOUT
               </p>
             </div>
@@ -126,8 +128,17 @@ function Dashboard() {
               </div>
 
               <div className="topbar-actions">
-                <button type="button">
-                  <Moon />
+                <button
+                  type="button"
+                  onClick={toggleTheme}
+                  title={
+                    theme === "dark"
+                      ? "Switch to light theme"
+                      : "Switch to dark theme"
+                  }
+                  aria-label="Toggle theme"
+                >
+                  {theme === "dark" ? <Sun /> : <Moon />}
                 </button>
 
                 <button type="button">
@@ -167,4 +178,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
