@@ -188,6 +188,9 @@ export default function ColorClashGame({ username = "Player", onGameComplete, on
     return (
       <div className="cc-game">
         <BackgroundPixelStars/>
+        <button className="back-button" onClick={onBack}>
+          <House size={44} />
+        </button>
 
         <div className="cc-glow cc-glow-one" />
         <div className="cc-glow cc-glow-two" />
@@ -237,6 +240,9 @@ export default function ColorClashGame({ username = "Player", onGameComplete, on
   return (
     <div className="cc-game">
       <BackgroundPixelStars/>
+      <button className="back-button" onClick={onBack}>
+        <House size={44} />
+      </button>
       <div className="cc-glow cc-glow-one" />
       <div className="cc-glow cc-glow-two" />
       <div className="cc-result">

@@ -17,6 +17,8 @@ import Dashboard from "./Pages/Dashboard";
 import MemoryTyping from "./Pages/MemoryTyping";
 import ColorClash from "./Pages/ColorClash";
 import Landing from "./Pages/Landing";
+import Auth from "./Pages/Auth";
+import Signup from "./Pages/Signup";
 
 function App() {
     return (
@@ -26,8 +28,11 @@ function App() {
               
                 <Route path="/" element={<Landing />} />
 
-               
                 <Route path="/dashboard" element={<Dashboard />} />
+
+                <Route path="/login" element={<Auth />} />
+
+                <Route path="/signup" element={<Signup />} />
 
               
                 <Route
