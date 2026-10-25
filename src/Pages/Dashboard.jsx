@@ -65,7 +65,7 @@ function Dashboard() {
         <div className="dashboard">
           <aside className="sidebar">
             <div className="logo">
-              <h1>Clutch</h1>
+              <h1 onClick={() => navigate("/")} style={{ cursor: "pointer" }}>Clutch</h1>
             </div>
 
             <nav>
