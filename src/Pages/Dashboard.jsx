@@ -15,6 +15,7 @@ import {
   Trophy,
   Search,
   Moon,
+  Sun,
   Settings,
   UserCircle,
 } from "lucide-react";
@@ -25,9 +26,16 @@ import { useAuth } from "../Context/AuthContext";
 
 function Dashboard() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
+  const [isDark, setIsDark] = useState(true);
 
   const navigate = useNavigate();
   const { user, isAuthenticated, logout } = useAuth();
+  const toggleTheme = () => {
+    const root = document.documentElement;
+    const current = root.getAttribute("data-theme");
+    root.setAttribute("data-theme", current === "light" ? "dark" : "light");
+    setIsDark((prev) => !prev);
+  };
 
   const openGame = (game) => {
     if (!isAuthenticated) {
@@ -126,8 +134,8 @@ function Dashboard() {
               </div>
 
               <div className="topbar-actions">
-                <button type="button">
-                  <Moon />
+                <button type="button" onClick={toggleTheme}>
+                  {isDark ? <Moon /> : <Sun />}
                 </button>
 
                 <button type="button">
