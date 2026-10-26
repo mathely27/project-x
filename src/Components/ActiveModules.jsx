@@ -31,14 +31,6 @@ function ActiveModules({ setActiveMenu }) {
 
             <div className="module-list">
                 <div className="module-card">
-                    <Keyboard />
-                    <h3>MEMORY TYPING</h3>
-                    <p>Test your typing speed and accuracy.</p>
-                    <button onClick={() => handleGameClick("typing", true)}>
-                        LAUNCH
-                    </button>
-                </div>
-                <div className="module-card">
                     <Timer />
                     <h3>F1 REACTION</h3>
                     <p>Test your reaction when lights go out.</p>
@@ -46,7 +38,6 @@ function ActiveModules({ setActiveMenu }) {
                         LAUNCH
                     </button>
                 </div>
-
                 <div className="module-card">
                     <Mouse />
                     <h3>CPS KING</h3>
@@ -55,7 +46,6 @@ function ActiveModules({ setActiveMenu }) {
                         LAUNCH
                     </button>
                 </div>
-
                 <div className="module-card">
                     <Keyboard />
                     <h3>COLOUR CLASH</h3>
@@ -64,6 +54,28 @@ function ActiveModules({ setActiveMenu }) {
                         LAUNCH
                     </button>
                 </div>
+                <div className="module-card">
+                    <Keyboard />
+                    <h3>MEMORY TYPING</h3>
+                    <p>Test your typing speed and accuracy.</p>
+                    <button onClick={() => handleGameClick("typing", true)}>
+                        LAUNCH
+                    </button>
+                </div>
+                <div className="module-card">
+                    <Keyboard />
+                    <h3>FLASH RECALL</h3>
+                    <p>Challenge your speed with words.</p>
+                    <button onClick={() => handleGameClick("flashRecall")}>
+                        COMING SOON!
+                    </button>
+                </div>
+
+
+
+
+
+
 
                 <div className="module-card">
                     <Timer />
@@ -74,14 +86,7 @@ function ActiveModules({ setActiveMenu }) {
                     </button>
                 </div>
 
-                <div className="module-card">
-                    <Keyboard />
-                    <h3>FLASH RECALL</h3>
-                    <p>Challenge your speed with words.</p>
-                    <button onClick={() => handleGameClick("flashRecall")}>
-                        COMING SOON!
-                    </button>
-                </div>
+
 
                 <div className="module-card">
                     <Mouse />
